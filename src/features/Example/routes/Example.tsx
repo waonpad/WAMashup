@@ -1,13 +1,11 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-function Example ():React.ReactElement {
+export default function Example() {
 
     return(
         <Box>
             <Typography>Example</Typography>
         </Box>
     )
-}
-
-export default Example;
+};
