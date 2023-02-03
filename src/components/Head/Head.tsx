@@ -17,14 +17,12 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EngineeringIcon from '@mui/icons-material/Engineering';
-import ExternalLink from '@/components/ExternalLink/ExternalLink';
-import { useElementClientRect } from '@/hooks/useElementClientRect';
-import { useWindowDimensions } from '@/hooks/useWindowDimensions';
 import { styled } from '@mui/material';
 
-interface Props {
+interface HeadProps {
   window?: () => Window;
   children: React.ReactNode;
+  title?: string;
 }
 
 const StyledToolbar = styled(Toolbar)({
@@ -32,18 +30,13 @@ const StyledToolbar = styled(Toolbar)({
     minHeight: '64px'
 });
 
-export default function Header(props: Props) {
-    const { window, children } = props;
+export const Head = (props: HeadProps) => {
+    const { window, children, title = 'Templete' } = props;
 
     const location = useLocation();
-    const {width} = useWindowDimensions();
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const projectName = 'ReactTypeScriptTemplete';
     const drawerWidth = 220;
-
-    const headerRef = useRef(null);
-    const {clientRect: headerClientRect} = useElementClientRect(headerRef);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -99,7 +92,6 @@ export default function Header(props: Props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <AppBar
-                ref={headerRef}
                 component="nav"
                 position="fixed"
                 sx={{
@@ -123,7 +115,7 @@ export default function Header(props: Props) {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'block', md: 'block' }, fontWeight: 'bold' }}
                     >
-                        {projectName}
+                        {title}
                     </Typography>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             {navItems.map((item) => (

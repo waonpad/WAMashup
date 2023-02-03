@@ -6,7 +6,7 @@ type ExternalLinkProps = {
     style?: CSSProperties | {[key: string]: CSSProperties};
 }
 
-function ExternalLink (props: ExternalLinkProps):React.ReactElement {
+export const ExternalLink = (props: ExternalLinkProps) => {
     const {url, children, style} = props;
     
     const linkProps = (url: string) => {
@@ -28,6 +28,4 @@ function ExternalLink (props: ExternalLinkProps):React.ReactElement {
             {children}
         </a>
     )
-}
-
-export default ExternalLink;
+};

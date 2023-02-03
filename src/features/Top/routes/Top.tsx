@@ -1,9 +1,11 @@
 import React from 'react';
+import { ContentLayout } from '@/components/Layout';
 
-function Top ():React.ReactElement {
+export const Top = () => {
+
     return(
-        <div><h1>React TypeScript Templete</h1></div>
+        <ContentLayout>
+            <div><h1>React TypeScript Templete</h1></div>
+        </ContentLayout>
     )
-}
-
-export default Top;
+};

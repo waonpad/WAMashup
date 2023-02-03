@@ -1,13 +1,18 @@
-import React, { useEffect, useState, ReactNode } from 'react';
+import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
-import { globalTheme } from './Theme';
+import { appTheme } from './Theme';
 
-function View({children}: any):React.ReactElement {
+type ViewProps = {
+    children: React.ReactNode;
+};
+
+function View(props: ViewProps):React.ReactElement {
+    const {children} = props;
 
     return (
-        <ThemeProvider theme={globalTheme}>
+        <ThemeProvider theme={appTheme}>
             <CssBaseline />
             {children}
         </ThemeProvider>

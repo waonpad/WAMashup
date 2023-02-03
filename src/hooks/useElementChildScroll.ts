@@ -1,6 +1,6 @@
 import { useState, useEffect, MutableRefObject } from 'react';
 
-function useElementChildScroll(ref: MutableRefObject<HTMLElement | null>) {
+export const useElementChildScroll = (ref: MutableRefObject<HTMLElement | null>) => {
     const [scrollTop, setScrollTop] = useState(0);
 
     useEffect(() => {
@@ -21,6 +21,4 @@ function useElementChildScroll(ref: MutableRefObject<HTMLElement | null>) {
     }, [ref]);
 
     return scrollTop;
-}
-
-export default useElementChildScroll;
+};

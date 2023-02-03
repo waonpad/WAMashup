@@ -1,8 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Example from "@/features/Example/routes/Example";
-import Top from "@/features/Top/routes/Top";
-import Page404 from "@/features/Page404/routes/Page404";
+import { lazyImport } from '@/utils/lazyImport';
+
+const { Top } = lazyImport(() => import('@/features/Top'), 'Top');
+const { Example } = lazyImport(() => import('@/features/Example'), 'Example');
+const { Page404 } = lazyImport(() => import('@/features/Page404'), 'Page404');
 
 export const AppRoutes = () => {
     return (
