@@ -21,15 +21,17 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-
-resolve: {
+  resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
-
-plugins: [
+  plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
   ],
-
+  devServer: {
+    historyApiFallback: {
+      rewrites: [{ from: /^\/*/, to: '/index.html' }],
+    },
+  }
 }
