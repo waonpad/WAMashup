@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
@@ -9,13 +10,17 @@
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
   },
-  // "exclude": [
-  //   "vendor",
-  //   "node_modules"
-  // ],
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Recommended"
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    // "vendor",
+    "node_modules"
+  ],
+  // "$schema": "https://json.schemastore.org/tsconfig",
+  // "display": "Recommended",
 }

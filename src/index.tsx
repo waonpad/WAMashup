@@ -1,20 +1,12 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import View from './View';
-import Example from "./pages/Example";
-import Top from "./pages/Top";
+import App from "./App";
 
-function Root ():React.ReactElement {
+function Root() {
     return (
-        <View>
-            <BrowserRouter>
-                <Routes>
-                    <Route path='/' element={<Top />} />
-                    <Route path='/example' element={<Example />} />
-                </Routes>
-            </BrowserRouter>
-        </View>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
     );
 };
 
