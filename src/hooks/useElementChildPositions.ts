@@ -1,8 +1,8 @@
 import { useState, useEffect, MutableRefObject } from 'react';
 import { useElementClientRect } from '@/hooks/useElementClientRect';
-import useElementChildScroll from '@/hooks/useElementChildScroll';
+import { useElementChildScroll } from '@/hooks/useElementChildScroll';
 
-function useElementChildPositions(parentRef: MutableRefObject<HTMLElement | null>, childRefs: MutableRefObject<{[key: string]: HTMLElement} | null>) {
+export const useElementChildPositions = (parentRef: MutableRefObject<HTMLElement | null>, childRefs: MutableRefObject<{[key: string]: HTMLElement} | null>) => {
     const {clientRect: parentRect} = useElementClientRect(parentRef);
     const scrollTop = useElementChildScroll(parentRef);
     const [childPositions, setChildPositions] = useState({});
@@ -42,6 +42,4 @@ function useElementChildPositions(parentRef: MutableRefObject<HTMLElement | null
     }, [parentRef, childRefs, parentRect, scrollTop]);
 
     return childPositions;
-}
-
-export default useElementChildPositions;
+};

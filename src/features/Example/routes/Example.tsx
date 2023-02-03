@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { ContentLayout } from '@/components/Layout';
 
-export default function Example() {
+export const Example = () => {
 
     return(
-        <Box>
+        <ContentLayout>
             <Typography>Example</Typography>
-        </Box>
+        </ContentLayout>
     )
 };
