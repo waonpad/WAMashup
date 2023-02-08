@@ -36,7 +36,8 @@ export const Head = (props: HeadProps) => {
     const location = useLocation();
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const drawerWidth = 220;
+    // const drawerWidth = 220;
+    const drawerWidth = 0;
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -46,7 +47,8 @@ export const Head = (props: HeadProps) => {
         setMobileOpen(false);
     }, [location]);
 
-    const navItems = ['Home', 'About', 'Contact'];
+    // const navItems = ['Home', 'About', 'Contact'];
+    const navItems: any[] = [];
 
     const drawerItems = [
         {
@@ -160,7 +162,7 @@ export const Head = (props: HeadProps) => {
                 <StyledToolbar />
                 <Box
                     sx={{
-                        p: 2,
+                        p: 0,
                     }}
                     >
                     {children}

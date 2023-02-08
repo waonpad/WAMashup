@@ -10,7 +10,6 @@ export const AppRoutes = () => {
     return (
         <Routes>
             <Route path='/' element={<Top />} />
-            <Route path='/works' element={<Top />} />
             <Route path='/example' element={<Example />} />
             <Route path='*' element={<Page404 />} />
         </Routes>
